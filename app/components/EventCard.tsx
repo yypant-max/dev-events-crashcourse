@@ -23,7 +23,7 @@ const EventCard = ({ title, image, slug, location, date, time }: Props) => {
   };
 
   return (
-    <Link href="/events/{slug}" id="event-card" onClick={handleClick}>
+    <Link href={`/events/${slug}`} id="event-card" onClick={handleClick}>
       <Image
         src={image}
         alt={title}

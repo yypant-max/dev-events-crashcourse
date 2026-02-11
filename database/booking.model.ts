@@ -41,4 +41,4 @@ bookingSchema.pre<IBooking>('save', async function () {
 bookingSchema.index({ eventId: 1 });
 
 // Booking model
-export const Booking = mongoose.model<IBooking>('Booking', bookingSchema);
+export const Booking = mongoose.models.Booking || mongoose.model<IBooking>('Booking', bookingSchema);

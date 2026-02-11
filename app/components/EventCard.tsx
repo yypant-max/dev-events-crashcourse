@@ -13,6 +13,8 @@ interface Props {
 }
 
 const EventCard = ({ title, image, slug, location, date, time }: Props) => {
+  const encodedSlug = encodeURIComponent(slug);
+
   const handleClick = () => {
     posthog.capture("event_card_clicked", {
       event_title: title,
@@ -23,7 +25,7 @@ const EventCard = ({ title, image, slug, location, date, time }: Props) => {
   };
 
   return (
-    <Link href={`/events/${slug}`} id="event-card" onClick={handleClick}>
+    <Link href={`/events/${encodedSlug}`} id="event-card" onClick={handleClick}>
       <Image
         src={image}
         alt={title}

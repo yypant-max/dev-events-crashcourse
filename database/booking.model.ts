@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import { Event } from './event.model';
+import Event from './event.model';
 
 // Interface for Booking document
 export interface IBooking extends Document {
